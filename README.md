@@ -2,5 +2,8 @@
 プログラミング勉強会用リポジトリです。
   
   
-## contributors
-@minmin0530
+## mentor
+Izumi  
+Tsukamura  
+Yamauchi
+
