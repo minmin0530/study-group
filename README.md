@@ -7,3 +7,6 @@ Izumi
 Tsukamura  
 Yamauchi
 
+## participant
+Kamiishi  
+Naniwa
