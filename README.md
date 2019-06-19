@@ -3,10 +3,10 @@
   
   
 ## mentor
-Izumi  
+@minmin0530 Izumi  
 Tsukamura  
 Yamauchi
 
 ## participant
-Kamiishi  
+@yousunsun888 Kamiishi  
 Naniwa
