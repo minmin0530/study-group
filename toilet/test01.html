@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>トイレ評価入力</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+<style>
+
+img {
+	max-width:100%
+}
+h1, p, section.introductions {
+	font-size:0.9em
+}
+/* イベント会場 */
+#map {
+	width: 100%;
+	height: 240px;
+	border: 7px solid #69C;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#name {
+    width: 60%;
+    height: 40px;
+    font-size: 24px;
+}
+#mail {
+    width: 60%;
+    height: 40px;
+    font-size: 24px;
+}
+#address {
+    width: 60%;
+    height: 40px;
+    font-size: 24px;
+}
+#remark {
+    width: 60%;
+    height: 40px;
+    font-size: 24px;
+}
+.button {
+    width: 200px;
+   padding: 15px;
+   font-size: 24px;
+   border-radius:5px;
+}
+label {
+  width: 300px;
+}
+.td-value {
+  width: 700px;
+}
+h1 {
+  font-size: 64px;
+}
+#gender {
+   width: 620px;
+}
+#value {
+   width: 620px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>トイレの評価入力</h1>
+  <!-- お問い合わせフォーム -->
+    <form action="wc.php" method="get" name="f1">
+<table>
+  <tr>
+      <td><label for="name">ニックネーム: </label></td>
+      <td class="td-value"><input type="text" id="name" placeholder="松山 太郎"></td>
+  </tr>
+  <tr>
+      <td><label for="mail">メールアドレス: </label></td>
+      <td class="td-value"><input type="email" id="mail" placeholder="address@oooooo.com"></td>
+   </tr>
+   <tr>
+      <td><label for="address">トイレの所在地: </label></td>
+      <td class="td-value"><input type="text" id="address" name="address" placeholder="愛媛県松山市一番町１−１"></td>
+   </tr>
+   <tr>
+      <td><label for="remark">その他評価したい内容: </label></td>
+      <td class="td-value"><textarea id="remark" placeholder="自由に入力してください"></textarea></td>
+</table>
+
+
+    <div data-role="fieldcontain" id="gender">
+      <fieldset data-role="controlgroup">
+        <legend>性別: </legend>
+        <input type="radio" name="gender" id="gender1" checked>
+        <label for="gender1">男性</label>
+        <input type="radio" name="gender" id="gender2">
+        <label for="gender2">女性</label>
+      </fieldset>
+    </div>
+    <div data-role="fieldcontain" id="value">
+      <fieldset data-role="controlgroup">
+        <legend>評価: </legend>
+        <div class="selection-group">
+        <input id="a" type="radio" name="color" value="0">
+        <label for="a">
+          評価1
+          <img src="red.png">
+        </label>
+
+        <input id="b" type="radio" name="color" value="1">
+        <label for="b">
+          評価2
+          <img src="yellow.png">
+        </label>
+
+        <input id="c" type="radio" name="color" value="2">
+        <label for="c">
+          評価3
+          <img src="green.png">
+        </label>
+        
+        <input id="d" type="radio" name="color" value="3">
+        <label for="d">
+          評価4
+          <img src="blue.png">
+        </label>
+        
+        <input id="e" type="radio" name="color" value="4">
+        <label for="e">
+          評価5
+          <img src="violet.png">
+        </label>
+      </fieldset>
+    </div>
+
+
+
+      <input class="button" type="button" value="キャンセル" data-inline="true">
+      <input class="button" type="submit" value="送信" data-inline="true">
+    </form>  
+  
+
+  
+
+</body>
+</html>

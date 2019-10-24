@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>トイレ評価入力</title>
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+<!--<script type="text/javascript" src="http://gc.kis.scr.kaspersky-labs.com/1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js" charset="UTF-8"></script>-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7mgZG_eiXwH2TEWNIQkJ8vQtmnUgWq18"></script>
+
+<script>  
+      // Google Map API
+
+      $(document).ready(function(){
+        $('#page4').bind('pageshow', function(){
+          //地図作成
+          var target = document.getElementById('map'),
+          infowindow = new google.maps.InfoWindow(target),
+          latLng = new google.maps.LatLng(35.6604,139.729043), //地図の中心の緯度,経度
+          map = new google.maps.Map(target, {
+            zoom: 15, //ズーム率
+            mapTypeId: google.maps.MapTypeId.ROADMAP}),
+          marker = new google.maps.Marker({
+            title: '六本木ヒルズ', //配置するマーカーの名前
+            position: latLng,
+            map: map});
+          map.setCenter(latLng);
+          infowindow.open(map);
+        });
+      });
+  
+</script>
+
+<style>
+
+img {
+	max-width:100%
+}
+h1, p, section.introductions {
+	font-size:0.9em
+}
+/* イベント会場 */
+#map {
+	width: 100%;
+	height: 240px;
+	border: 7px solid #69C;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div data-role="page" id="page1" data-add-back-btn="true">
+  <div data-role="header">
+    <h1>トイレ情報検索投稿サイト</h1>
+  </div>
+　<div data-role="content">
+    <section class="introductions"> 
+      <!--<img src="https://ar7.jp/" alt="トイレの評価をしよう">-->
+      <p>使用したトイレの評価をお願いします。</p>
+      <iframe width="800" height="400" src="https://ar7.jp/index3.html" scrolling="auto"></iframe>
+    </section>
+    <p><a href="#form" data-role="button" data-icon="info" data-transition="pop">投稿する</a></p>
+  <!--  <ul>
+      <li><a href="#page2" data-transition="slide">デザイン参考サイトまとめ</a></li>
+      <li><a href="#page3" data-transition="slideup">Facebookページまとめ</a></li>
+      <li><a href="another.html" data-transition="pop">イベント会場</a></li>
+    </ul>-->
+  </div>
+  <div data-role="footer">
+    <h4>2019&copy;ご協力ありがとうございます！</h4>
+  </div>
+</div>
+
+  <!-- お問い合わせフォーム -->
+<div data-role="page" id="form"  data-theme="c" data-add-back-btn="true">
+  <div data-role="header" data-theme="b">
+    <h1>トイレの評価入力</h1>
+  </div>
+  <div data-role="content">
+    <p>使用したトイレの評価をお願いします。</p>
+    <form action="wc.php" method="get" name="f1" data-ajax="false">
+    <div data-role="fieldcontain">
+      <label for="name">ニックネーム: </label>
+      <input type="text" id="name" placeholder="松山　太郎">
+    </div>
+    <div data-role="fieldcontain">
+      <label for="mail">メールアドレス: </label>
+      <input type="email" id="mail" placeholder="address@oooooo.com">
+    </div>
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup">
+        <legend>性別: </legend>
+        <input type="radio" name="gender" id="gender1" checked>
+        <label for="gender1">男性</label>
+        <input type="radio" name="gender" id="gender2">
+        <label for="gender2">女性</label>
+      </fieldset>
+    </div>
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup">
+        <legend>評価: </legend>
+        <div class="selection-group">
+        <input id="a" type="radio" name="color" value="0">
+        <label for="a">
+          評価1
+          <img src="red.png">
+        </label>
+
+        <input id="b" type="radio" name="color" value="1">
+        <label for="b">
+          評価2
+          <img src="yellow.png">
+        </label>
+
+        <input id="c" type="radio" name="color" value="2">
+        <label for="c">
+          評価3
+          <img src="green.png">
+        </label>
+        
+        <input id="d" type="radio" name="color" value="3">
+        <label for="d">
+          評価4
+          <img src="blue.png">
+        </label>
+        
+        <input id="e" type="radio" name="color" value="4">
+        <label for="e">
+          評価5
+          <img src="violet.png">
+        </label>
+      </fieldset>
+    </div>
+ 
+    <div data-role="fieldcontain">
+      <ul data-role="listview" data-inset="true">
+        <li data-icon="search"><a href="#page4" data-transition="pop">トイレの所在地</a></li>
+      </ul>
+    </div>
+    <div data-role="fieldcontain">
+      <label for="address">トイレの所在地: </label>
+      <input type="text" name="address" id="address" placeholder="愛媛県松山市一番町１－１">
+    </div>
+    <div data-role="fieldcontain">
+      <label for="remark">その他評価したい内容: </label>
+      <textarea id="remark" placeholder="自由に入力してください"></textarea>
+    </div>
+    
+    <input type="reset" value="キャンセル" data-inline="true">
+    <input type="submit" value="送信" data-inline="true">
+    
+    </form>
+  </div>
+  <div data-role="footer" data-theme="b">
+    <h4>&copy;ご協力ありがとうございました！</h4>
+  </div>
+  
+</div>
+<!-- お問い合わせフォームここまで --> 
+
+
+<!-- 1ぺージ(TOPページ) ここまで-->
+
+<!-- 2ぺージ -->
+<div data-role="page" id="page2" data-add-back-btn="true">
+  <div data-role="header">
+    <h1>デザイン参考サイトまとめ</h1>
+  </div>
+  <div data-role="content">
+    <h1>デザイン参考サイトまとめ</h1>
+    <p><img src="images/ph01.jpg" alt="宮古島の海"></p>
+    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+  </div>
+  <div data-role="footer">
+    <h4>&copy;HTML5でサイトをつくろう</h4>
+  </div>
+</div>
+<!-- 2ぺージ ここまで-->
+
+<!-- 3ぺージ -->
+<div data-role="page" id="page3" data-add-back-btn="true">
+  <div data-role="header">
+    <h1>Facebookページまとめ</h1>
+  </div>
+  <div data-role="content">
+    <h1>Facebookページまとめ</h1>
+    <p><img src="images/ph02.jpg" alt="海と自転車"></p>
+    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+  </div>
+  <div data-role="footer">
+    <h4>&copy;HTML5でサイトをつくろう</h4>
+  </div>
+</div>
+<!-- 3ぺージ ここまで-->
+
+<!-- 4ぺージ -->
+<div data-role="page" id="page4" data-theme="c" data-add-back-btn="true">
+  <div data-role="header" data-theme="b">
+    <h1>トイレの場所</h1>
+  </div>
+  <div data-role="content">
+    <h1>トイレの所在地をマークしてください</h1>
+    <div id="map"></div>
+    <p>マークできたらOKボタンを押してください</p>
+    <input type="button" value="キャンセル" data-inline="true">
+    <input type="submit" value="OK" data-inline="true">
+  </div>
+  <div data-role="footer" data-theme="b">
+    <h4>&copy;トイレの評価をしよう！</h4>
+  </div>
+</div>
+<!-- 4ぺージ ここまで-->
+
+</body>
+</html>
